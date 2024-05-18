@@ -5,10 +5,10 @@
         "u_id": "1357678",
         "cat_id": "cat-20006",
         "scat_id": "scat-30006",
-        "b_title": "Discount",
-        "b_subtitle": "For the first order",
-        "b_desc": "Are you ready to experience the best? For a limited time, we are giving you an incredible $100 discount on your first order! Whether you are shopping for the latest gadgets, stylish apparel, or home e",
-        "b_image": "coupon.png",
+        "b_title": "spicy noodles",
+        "b_subtitle": "chines special noodles",
+        "b_desc": " A bowl of slurpy, tasty and spicy noodles is a dish that we could hard",
+        "b_image": "home-img-1.png",
         "status": "show"
     },
     {
@@ -17,10 +17,10 @@
         "u_id": "1357678",
         "cat_id": "cat-20003",
         "scat_id": "scat-30011",
-        "b_title": "Discount on Olive Oils for today!",
-        "b_subtitle": "Best Olive Oils",
-        "b_desc": "For a limited time, indulge in the rich flavors and health benefits of our premium olive oils with an exclusive discount. Elevate your cooking and enjoy the best nature has to offer.Use Code: OLIVE20 ",
-        "b_image": "oil.png",
+        "b_title": "spicy pizza",
+        "b_subtitle": "hot & spicy dishes",
+        "b_desc": " a flat, open-faced baked pie of Italian origin, consisting of a thin layer of bread dough topped wit",
+        "b_image": "home-img-3.png",
         "status": "show"
     },
     {
@@ -29,10 +29,10 @@
         "u_id": "1357678",
         "cat_id": "cat-20002",
         "scat_id": "scat-30005",
-        "b_title": "Sleepy Wet Wipes",
-        "b_subtitle": "Sleepy Wet Wipes",
-        "b_desc": "For a limited time, enjoy a special gift with your shopping! For every $50 you spend, receive a pack of premium wet wipes absolutely free. Perfect for keeping clean and refreshed on the go.",
-        "b_image": "wetwipe.png",
+        "b_title": "spicy chicken",
+        "b_subtitle": "world famous dishes",
+        "b_desc": "  Delicious chicken recipes from the pakistan best chefs including roast chicken",
+        "b_image": "home-img-2.png",
         "status": "hide"
     },
     {
@@ -41,10 +41,10 @@
         "u_id": "1357678",
         "cat_id": "cat-20008",
         "scat_id": "scat-30012",
-        "b_title": "Neutrogena Hydro Boost",
-        "b_subtitle": "Neutrogena Hydro Boost on Discount!!",
-        "b_desc": "Today only, experience the ultimate hydration with Neutrogena Hydro Boost for just $10! Dont miss out on this exclusive offer to revitalize your skin and achieve a dewy, radiant glow.",
-        "b_image": "neu.png",
+        "b_title": "hyderbadi biryani",
+        "b_subtitle": "very tasty and spicy",
+        "b_desc": "N\/A",
+        "b_image": "home-img-4.png",
         "status": "show"
     }
 ]

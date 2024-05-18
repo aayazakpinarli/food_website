@@ -38,38 +38,6 @@ if($_POST["action"] == "cards"){
 
 
                 }
-                $q6=$conn->query("SELECT COUNT(*) as pro FROM `card`");
-                if($q6){
-                    $row = mysqli_fetch_assoc($q6);
-                    $res = [
-                        "name" => "product Selling ",
-                        "result" => $row["pro"],
-                        "color" => "var(--bs-success)",
-                        "icons" => "fas fa-cart-arrow-down",
-                        "table" => "proSell.php",
-                        "formModalId" => "#proSellInsertModal"
-                    ];
-                    $f[] = $res;
-
-
-                }
-
-                $q8=$conn->query("SELECT COUNT(*) FROM `card` GROUP BY inv_id");
-                if($q8){
-                    
-                    $row = mysqli_num_rows($q8);
-                    $res = [
-                        "name" => "Invoices",
-                        "result" => $row,
-                        "color" => "var(--bs-teal)",
-                        "icons" => "fas fa-file-invoice",
-                        "table" => "proinv.php",
-                        "formModalId" => "#InsertModal"
-                    ];
-                    $f[] = $res;
-
-
-                }
 
 
                 foreach ($f as $row){
