@@ -113,13 +113,10 @@ function ad_head_content () {
               <div class="col-sm-6 d-flex-center ">
                   <div class="dpanel-headings me-auto ms-3">
                       <h1 class=" dpanel-title">Dashboard</h1>
-                      <h6 class="dpanel-subtitle">ALl found</h6>
                   </div>
               </div><!-- /.col -->
               <div class="col-sm-4 me-auto  offset-2 d-flex-center">
                 <ol class="breadcrumb ">
-                  <li class="breadcrumb-item"><a href="#">Admin</a></li>
-                  <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
               </div><!-- /.col -->
             </div><!-- /.row -->
@@ -133,18 +130,7 @@ function tables(){
     echo ' <div class="container-fluid">
 
     <div class="card shadow mb-4" id="DpanelTable">
-                  <div id="spinner-div">
-                    <div class="spinner-border" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                      </div>
-                  </div>
-        <div class="card-header d-flex justify-content-between py-3">
-                  <div class="form-outline">
-                    <input id="TableSearchInput" type="search"   placeholder="search..." class="form-control" />
-                    
-                  </div> 
-        </div>
-            <button type="button" class="btn   dpanel-btn btn-sm Add_btn"  data-modal="" >ADD USER</button>
+        <button type="button" class="btn   dpanel-btn btn-sm Add_btn"  data-modal="" >ADD USER</button>
         </div>
         <div class="card-body">
             <div class=" table-responsive "  >
@@ -191,36 +177,23 @@ function formModals(){
                                 </div>
                                 <div class="col-6">
                                   <div class="mb-2">
-                                    <label for="" class="form-label">Subtitle</label>
-                                    <input type="text" class="form-control" name="pSubtitle"  placeholder="Subtile">
-                                  </div>
-                                </div>
-                                <div class="col-6">
-                                  <div class="mb-2">
-                                    <label for="" class="form-label">Category</label>
-                                    <select class="form-select form-select-lg" name="Cat_id" id="cat_select_input" style="padding-top: 0.2rem !important;padding-bottom: 0.2rem !important;" name="UserRole" id="UserRole">
-                                    </select>
-                                  </div>
-                                </div>
-                                <div class="col-6">
-                                  <div class="mb-2">
-                                    <label for="" class="form-label">Sub Category</label>
-                                    <select class="form-select form-select-lg " name="Scat_id" disabled id="Scat_select_input" style="padding-top: 0.2rem !important;padding-bottom: 0.2rem !important;" name="UserRole" id="UserRole">
-                                    </select>
-                                  </div>
-                                </div>
-                                <div class="col-6">
-                                  <div class="mb-2">
-                                    <label for="" class="form-label">Prize</label>
-                                    <input type="tel" class="form-control" name="pPrize">
-                                  </div>
-                                </div>
-                                <div class="col-6">
-                                  <div class="mb-2">
                                     <label for="" class="form-label">Choose Image</label>
                                     <input type="file" class="form-control" name="pImg">
                                   </div>
+                                 </div>
+                                <div class="col-6">
+                                    <div class="mb-2">
+                                      <label for="" class="form-label">Price</label>
+                                      <input type="text" class="form-control" name="pPrise"  placeholder="Price">
+                                  </div>
                                 </div>
+                                <div class="col-6">
+                                    <div class="mb-2">
+                                      <label for="" class="form-label">Discounted Price</label>
+                                      <input type="text" class="form-control" name="discPrice"  placeholder="Discounted Price">
+                                  </div>
+                                </div>
+
                                 <div class="col-12">
                                   <div class="mb-2">
                                     <label for="" class="form-label">description</label>
