@@ -87,8 +87,8 @@ while ($row = mysqli_fetch_assoc($run_query)) {
     $subarray[] = '<div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" name="check" ' . $checked . '>
     </div>';
-    $subarray[] = "<a class='btn btn-sm mr-1 btn-info material-symbols-outlined' id='EditBtn' data-id='{$row['p_id']}'>Edit</a>
-                   <a href='' class='btn btn-sm btn-danger material-symbols-outlined' id='delBtn' data-id='{$row['p_id']}'>Delete</a>";
+    $subarray[] = "<a class='btn btn-sm mr-1 btn-info material-symbols-outlined editBtn' data-id='{$row['p_id']}'>Edit</a>
+    <a href='' class='btn btn-sm btn-danger material-symbols-outlined delBtn' data-id='{$row['p_id']}'>Delete</a>";
     $data[] = $subarray;
 }
 

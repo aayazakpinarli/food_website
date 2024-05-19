@@ -13,7 +13,7 @@
         "status": "show",
         "action": "far",
         "date": "2023-02-20 17:46:03.000000",
-        "market_id": "51"
+        "market_id": "1357678"
     },
     {
         "id": "2",
@@ -29,7 +29,7 @@
         "status": "show",
         "action": "far",
         "date": "2023-02-21 17:46:03.000000",
-        "market_id": "51"
+        "market_id": "1357678"
     },
     {
         "id": "3",
@@ -45,7 +45,7 @@
         "status": "show",
         "action": "far",
         "date": "2023-03-01 20:14:29.000000",
-        "market_id": "51"
+        "market_id": "1357678"
     },
     {
         "id": "4",
@@ -128,83 +128,19 @@
         "market_id": "51"
     },
     {
-        "id": "17",
+        "id": "24",
         "p_id": "p-10010",
-        "cat_id": "cat-20005",
-        "scat_id": "scat-30010",
-        "u_id": "1357678",
-        "p_title": "Mango",
-        "p_subtitle": "Mango",
-        "p_desc": "Mangoes are a popular tropical fruit in our market, known for their sweet taste and nutritional benefits.",
-        "p_prize": "20",
-        "p_image": "mangoe.png",
-        "status": "show",
-        "action": "far",
-        "date": "2023-02-26 17:46:03.000000",
-        "market_id": "2"
-    },
-    {
-        "id": "18",
-        "p_id": "p-10011",
-        "cat_id": "cat-20007",
-        "scat_id": "scat-30015",
-        "u_id": "1357678",
-        "p_title": "avocado",
-        "p_subtitle": "Avocado",
-        "p_desc": "Avocados are a highly valued fruit in the global market, celebrated for their rich taste and health benefits. ",
-        "p_prize": "20",
-        "p_image": "avocado.png",
-        "status": "show",
-        "action": "far",
-        "date": "2023-02-28 17:46:03.000000",
-        "market_id": "2"
-    },
-    {
-        "id": "19",
-        "p_id": "p-10012",
-        "cat_id": "cat-20002",
-        "scat_id": "scat-30005",
-        "u_id": "1357678",
-        "p_title": "Spinach",
-        "p_subtitle": "Spinach",
-        "p_desc": "Spinach is a widely consumed leafy green vegetable in the global market, valued for its nutritional benefits and versatility in cooking. ",
-        "p_prize": "8",
-        "p_image": "spinach.png",
-        "status": "show",
-        "action": "far",
-        "date": "2023-03-01 20:15:34.000000",
-        "market_id": "2"
-    },
-    {
-        "id": "28",
-        "p_id": "p-10013",
-        "cat_id": "cat-20002",
+        "cat_id": "select",
         "scat_id": "",
-        "u_id": "2",
-        "p_title": "meatball",
-        "p_subtitle": "assd",
-        "p_desc": "aaa",
-        "p_prize": "123",
-        "p_image": "ustam.jpg",
+        "u_id": "",
+        "p_title": "asdaaasaaaaaa",
+        "p_subtitle": "aa",
+        "p_desc": "aa",
+        "p_prize": "0",
+        "p_image": "3333.png",
         "status": "show",
         "action": "far",
         "date": "0000-00-00 00:00:00.000000",
-        "market_id": "2"
-    },
-    {
-        "id": "29",
-        "p_id": "p-10014",
-        "cat_id": "cat-20002",
-        "scat_id": "",
-        "u_id": "2",
-        "p_title": "meatballs",
-        "p_subtitle": "assd",
-        "p_desc": "aaa",
-        "p_prize": "123",
-        "p_image": "ustam.jpg",
-        "status": "show",
-        "action": "far",
-        "date": "0000-00-00 00:00:00.000000",
-        "market_id": "2"
+        "market_id": "51"
     }
 ]

@@ -328,8 +328,8 @@ function MyTable(type ,url ,data,dataType,res_id){
  
   
   }
- }
-;  
+ };
+
  $(`${res_id} .pagination`).html(pageLink);
  $(`${res_id} span.record`).html(button);
   }else{
@@ -711,4 +711,45 @@ MoneyEntryLoad();
 
   } );//main jquery
   
+
+  // handling form submission for adding/updating products
+$(document).on("submit", "#productsAddForm, #productsEditForm", function (e) {
+  e.preventDefault();
+  let formModalNames = window.localStorage.getItem("TableName"),
+    modalId = window.localStorage.getItem("modalId");
+
+  console.log(formModalNames);
+  var formId = $(this).attr("id");
+  var Data = new FormData(document.getElementById(formId));
+  console.log(Data);
+  $.ajax({
+    type: $(this).attr("method"),
+    url: $(this).attr("action"),
+    data: Data,
+    dataType: "JSON",
+    processData: false,
+    contentType: false,
+    success: function (data) {
+      console.log(data);
+      if (data.type == "success") {
+        modalHide(modalId);
+        message(data.type, data.msg);
+        cardsLoad();
+        refreshProductList(); // Refresh the product list dynamically
+      }
+    },
+    error: function (err) {
+      console.log(err);
+      console.log(err.responseText);
+    }
+  });
+});
+
+
+
+function refreshProductList() {
+  let url = window.localStorage.getItem("url"),
+    data = { "action": "loadTable" };
+  MyTable("POST", url, data, "json", "#DpanelTable");
+}
   
