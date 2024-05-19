@@ -50,6 +50,8 @@ if ($cat_id != "" && $prize != "" && $title != "" && $subtile != "") {
             $img = $img_name;
             if (move_uploaded_file($tmp_name, "../../../images/" . $img)) {
                 if ($_POST["action"] == "insert") {
+
+              
                     $q = $conn->query("INSERT INTO `product`(`p_id`, `cat_id`, `scat_id`, `unique_id`, `p_title`, `p_subtitle`, `p_desc`, `p_prize`, `p_image`, `market_id`, `discPrice`, `qty`) 
                                     VALUES ('$newP_id', '$cat_id', '$scat_id', '$unique_id', '$title', '$subtile', '$desc', '$prize', '$img', '$u_id', '$discPrice', '$qty')");
                     if ($q) {
