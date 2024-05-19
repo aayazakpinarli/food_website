@@ -14,11 +14,6 @@ $form .= ' <form  id="stockEditForm" action="js/database/proStockUpdate.php" met
                                     <input type="hidden" name="action" value="update">
                                     <input type="hidden" name="psID" value="'.$data["ps_id"].'">
                             <div class="row">
-
-
-
-
-
                               <div class="col-6">
 
                             <div class="mb-2">

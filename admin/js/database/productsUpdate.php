@@ -6,10 +6,12 @@ $p_id = (isset($_POST["pID"]) && $_POST["pID"] != "") ? mysqli_real_escape_strin
 $title = mysqli_real_escape_string($conn, $_POST["pTitle"]);
 $subtile = mysqli_real_escape_string($conn, $_POST["pSubtitle"]);
 $prize = mysqli_real_escape_string($conn, $_POST["pPrize"]);
+$discPrice = mysqli_real_escape_string($conn, $_POST["discPrice"]);
 $cat_id = mysqli_real_escape_string($conn, $_POST["Cat_id"]);
 $scat_id = (isset($_POST["Scat_id"]) && $_POST["Scat_id"] != "") ? mysqli_real_escape_string($conn, $_POST["Scat_id"]) : "";
 $desc = mysqli_real_escape_string($conn, $_POST["pDesc"]);
 $unique_id = (isset($_POST["unique_id"]) && $_POST["unique_id"] != "") ? mysqli_real_escape_string($conn, $_POST["unique_id"]) : "";
+$qty = mysqli_real_escape_string($conn, $_POST["qty"]);
 
 // Assume session contains user information
 session_start();
@@ -48,7 +50,8 @@ if ($cat_id != "" && $prize != "" && $title != "" && $subtile != "") {
             $img = $img_name;
             if (move_uploaded_file($tmp_name, "../../../images/" . $img)) {
                 if ($_POST["action"] == "insert") {
-                    $q = $conn->query("INSERT INTO `product`(`p_id`, `cat_id`, `scat_id`, `unique_id`, `p_title`, `p_subtitle`, `p_desc`, `p_prize`, `p_image`, `market_id`) VALUES ('$newP_id', '$cat_id', '$scat_id', '$unique_id', '$title', '$subtile', '$desc', '$prize', '$img', '$u_id')");
+                    $q = $conn->query("INSERT INTO `product`(`p_id`, `cat_id`, `scat_id`, `unique_id`, `p_title`, `p_subtitle`, `p_desc`, `p_prize`, `p_image`, `market_id`, `discPrice`, `qty`) 
+                                    VALUES ('$newP_id', '$cat_id', '$scat_id', '$unique_id', '$title', '$subtile', '$desc', '$prize', '$img', '$u_id', '$discPrice', '$qty')");
                     if ($q) {
                         $data = array(
                             "type" => "success",
@@ -63,7 +66,8 @@ if ($cat_id != "" && $prize != "" && $title != "" && $subtile != "") {
                 }
 
                 if ($_POST["action"] == "update") {
-                    $sql = "UPDATE `product` SET `cat_id` = '$cat_id', `scat_id` = '$scat_id', `u_id` = '$u_id', `p_title` = '$title', `p_subtitle` = '$subtile', `p_desc` = '$desc', `p_prize` = '$prize', `p_image` = '$img', `market_id` = '$u_id' WHERE `p_id` = '$p_id'";
+                    $sql = "UPDATE `product` SET `cat_id` = '$cat_id', `scat_id` = '$scat_id', `u_id` = '$u_id', `p_title` = '$title', `p_subtitle` = '$subtile', `p_desc` = '$desc', `p_prize` = '$prize', 
+                                `p_image` = '$img', `market_id` = '$u_id' , `discPrice` = '$discPrice' , `qty` = '$qty' WHERE `p_id` = '$p_id'";
                     $q2 = $conn->query($sql);
                     if ($q2) {
                         $data = array(

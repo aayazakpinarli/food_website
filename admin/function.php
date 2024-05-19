@@ -30,36 +30,26 @@ function ad_headers(){
                                   <button class="btn txt-clr me-1" id="nav-menu-toggle"> <i class="fas fa-bars d-block d-md-none"></i></button>
                                 <ul class="collapse navbar-collapse" >
                                   <li class="nav-item">
-                                      <a class="nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                                      <a class="nav-link active" href="../index.php" aria-current="page">HOME <span class="visually-hidden">(current)</span></a>
                                   </li>
-                                  <li class="nav-item">
-                                      <a class="nav-link" href="#">Link</a>
-                                  </li>
-
                                 </ul>
                               </div>
-
-                                  <ul><div><li class="nav-item"><a href="" class="nav-link  active"><i class="fas fa-sign-out-alt"></i></a></li></div></ul>
+                                 <ul><div><li class="nav-item"><a href="" class="nav-link  active"><i class="fas fa-sign-out-alt"></i></a></li></div></ul>
                   </nav> 
                 </header>
                   <aside class="dpanel-sidebar">
-                      <div class="navbar-brand ">LOGO</div>    
+                      <div class="navbar-brand ">WELCOME</div>    
                       
                       <ul class="mt-4 ">
                           <ul class=" " id="" >
                               <li class="nav-item">
-                                  <a class="nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                                  <a class="nav-link active" href="../index.php" aria-current="page">HOME <span class="visually-hidden">(current)</span></a>
                               </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="#">Link</a>
-                              </li>
+
 
                             </ul>
                           <li class="sidebar-item active">
-                              <a href="" class=""><img src="img/user1-128x128.jpg" class="userImg" width="30px" height="30px" style="border-radius: 50%;" alt=""></a>
-                              
                               <span class="userName"></span>     
-                              <span class="btn ms-auto  "> <b class ="fas fa-sign-out-alt"></b></span>
                           </li>
                      
                           <li class="sidebar-item dropdown position-relative" data-dropdown="#table">
@@ -182,9 +172,9 @@ function formModals(){
                                   </div>
                                  </div>
                                 <div class="col-6">
-                                    <div class="mb-2">
-                                      <label for="" class="form-label">Price</label>
-                                      <input type="text" class="form-control" name="pPrise"  placeholder="Price">
+                                  <div class="mb-2">
+                                    <label for="" class="form-label">Price</label>
+                                    <input type="tel" class="form-control" name="pPrize" placeholder="Price">
                                   </div>
                                 </div>
                                 <div class="col-6">
@@ -193,7 +183,12 @@ function formModals(){
                                       <input type="text" class="form-control" name="discPrice"  placeholder="Discounted Price">
                                   </div>
                                 </div>
-
+                                <div class="col-6">
+                                  <div class="mb-2">
+                                        <label for="" class="form-label">Quantity</label>
+                                        <input type="text" class="form-control" name="qty"  placeholder="Quantity">
+                                  </div>    
+                                </div>
                                 <div class="col-12">
                                   <div class="mb-2">
                                     <label for="" class="form-label">description</label>
