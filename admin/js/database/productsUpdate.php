@@ -2,41 +2,21 @@
 include '../../../database/conf.php';
 include "AdminLoginCheck.php";
 
+// Sanitize and validate user inputs
 $p_id = (isset($_POST["pID"]) && $_POST["pID"] != "") ? mysqli_real_escape_string($conn, $_POST["pID"]) : "";
-$title = mysqli_real_escape_string($conn, $_POST["pTitle"]);
-$subtile = mysqli_real_escape_string($conn, $_POST["pSubtitle"]);
-$prize = mysqli_real_escape_string($conn, $_POST["pPrize"]);
-$discPrice = mysqli_real_escape_string($conn, $_POST["discPrice"]);
-$cat_id = mysqli_real_escape_string($conn, $_POST["Cat_id"]);
-$scat_id = (isset($_POST["Scat_id"]) && $_POST["Scat_id"] != "") ? mysqli_real_escape_string($conn, $_POST["Scat_id"]) : "";
-$desc = mysqli_real_escape_string($conn, $_POST["pDesc"]);
-$unique_id = (isset($_POST["unique_id"]) && $_POST["unique_id"] != "") ? mysqli_real_escape_string($conn, $_POST["unique_id"]) : "";
-$qty = mysqli_real_escape_string($conn, $_POST["qty"]);
+$title = (isset($_POST["pTitle"]) && $_POST["pTitle"] != "") ? mysqli_real_escape_string($conn, $_POST["pTitle"]) : "";
+$prize = (isset($_POST["pPrize"]) && $_POST["pPrize"] != "") ? mysqli_real_escape_string($conn, $_POST["pPrize"]) : "";
+$discPrice = (isset($_POST["discPrice"]) && $_POST["discPrice"] != "") ? mysqli_real_escape_string($conn, $_POST["discPrice"]) : "";
+$desc = (isset($_POST["pDesc"]) && $_POST["pDesc"] != "") ? mysqli_real_escape_string($conn, $_POST["pDesc"]) : "";
+$qty = (isset($_POST["qty"]) && $_POST["qty"] != "") ? mysqli_real_escape_string($conn, $_POST["qty"]) : "";
+$status = (isset($_POST["status"]) && $_POST["status"] != "") ? mysqli_real_escape_string($conn, $_POST["status"]) : "active";
 
 // Assume session contains user information
-session_start();
-$u_id = $_SESSION['u_id']; // Replace 'user_id' with the actual session key for the user ID
+$u_id = isset($_SESSION['u_id']) ? $_SESSION['u_id'] : "";
 
-if ($cat_id != "" && $prize != "" && $title != "" && $subtile != "") {
-    // Making invoice
-    $q2 = $conn->query("SELECT MAX(p_id) as last_inv FROM `product` WHERE market_id = '$u_id'");
-    
-    if ($q2 && mysqli_num_rows($q2) > 0) {
-        $last = mysqli_fetch_assoc($q2);
-        
-        function increment($matches)
-        {
-            if (isset($matches[1])) {
-                $length = strlen($matches[1]);
-                return sprintf("%0" . $length . "d", ++$matches[1]);
-            }
-        }
-
-        $newP_id = $last['last_inv'];
-        $newP_id = preg_replace_callback("|(\d+)|", "increment", $newP_id);
-    } else {
-        $newP_id = "1213543"; // Default value if there are no previous entries
-    }
+if ($prize != "" && $title != "" && $qty != "") {
+    // Generate a unique identifier for the product
+    $newP_id = uniqid('p_');
 
     if (isset($_FILES["pImg"])) {
         $img_name = $_FILES["pImg"]["name"];
@@ -47,14 +27,20 @@ if ($cat_id != "" && $prize != "" && $title != "" && $subtile != "") {
         $allowed_extensions = ['png', 'jpeg', 'jpg', "svg"];
 
         if (in_array($img_ext, $allowed_extensions) === true) {
-            $img = $img_name;
+            // Generate a unique filename for the image
+            $img = uniqid('img_') . '.' . $img_ext;
+
             if (move_uploaded_file($tmp_name, "../../../images/" . $img)) {
                 if ($_POST["action"] == "insert") {
+                    // Prepare the SQL statement
+                    $stmt = $conn->prepare("INSERT INTO `product` (`p_id`, `u_id`, `p_title`, `p_prize`, `p_image`, `market_id`, `discPrice`, `qty`, `status`, `p_desc`)
+                                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-              
-                    $q = $conn->query("INSERT INTO `product`(`p_id`, `cat_id`, `scat_id`, `unique_id`, `p_title`, `p_subtitle`, `p_desc`, `p_prize`, `p_image`, `market_id`, `discPrice`, `qty`) 
-                                    VALUES ('$newP_id', '$cat_id', '$scat_id', '$unique_id', '$title', '$subtile', '$desc', '$prize', '$img', '$u_id', '$discPrice', '$qty')");
-                    if ($q) {
+                    // Bind the parameters to the statement
+                    $stmt->bind_param("ssssssssss", $newP_id, $u_id, $title, $prize, $img, $u_id, $discPrice, $qty, $status, $desc);
+
+                    // Execute the statement
+                    if ($stmt->execute()) {
                         $data = array(
                             "type" => "success",
                             "msg" => "Your product was successfully inserted."
@@ -62,16 +48,25 @@ if ($cat_id != "" && $prize != "" && $title != "" && $subtile != "") {
                     } else {
                         $data = array(
                             "type" => "error",
-                            "msg" => "Something went wrong."
+                            "msg" => "Something went wrong: " . $stmt->error
                         );
                     }
+
+                    // Close the statement
+                    $stmt->close();
                 }
 
                 if ($_POST["action"] == "update") {
-                    $sql = "UPDATE `product` SET `cat_id` = '$cat_id', `scat_id` = '$scat_id', `u_id` = '$u_id', `p_title` = '$title', `p_subtitle` = '$subtile', `p_desc` = '$desc', `p_prize` = '$prize', 
-                                `p_image` = '$img', `market_id` = '$u_id' , `discPrice` = '$discPrice' , `qty` = '$qty' WHERE `p_id` = '$p_id'";
-                    $q2 = $conn->query($sql);
-                    if ($q2) {
+                    // Prepare the SQL statement
+                    $stmt = $conn->prepare("UPDATE `product` SET `u_id` = ?, `p_title` = ?, `p_prize` = ?,
+                                            `p_image` = ?, `market_id` = ?, `discPrice` = ?, `qty` = ?, `status` = ?, `p_desc` = ?
+                                            WHERE `p_id` = ?");
+
+                    // Bind the parameters to the statement
+                    $stmt->bind_param("ssssssssss", $u_id, $title, $prize, $img, $u_id, $discPrice, $qty, $status, $desc, $p_id);
+
+                    // Execute the statement
+                    if ($stmt->execute()) {
                         $data = array(
                             "type" => "success",
                             "msg" => "Your product was updated."
@@ -79,9 +74,12 @@ if ($cat_id != "" && $prize != "" && $title != "" && $subtile != "") {
                     } else {
                         $data = array(
                             "type" => "error",
-                            "msg" => "Sorry, the update query failed."
+                            "msg" => "Sorry, the update query failed: " . $stmt->error
                         );
                     }
+
+                    // Close the statement
+                    $stmt->close();
                 }
             } else {
                 $data = array(
