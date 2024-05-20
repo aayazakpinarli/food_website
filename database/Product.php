@@ -60,13 +60,12 @@ if ($_POST["action"] == "shwAllPro") {
                                             <i class="fas fa-star-half-alt"></i>
                                         </div>
                                         <div class="d-flex"> <button class="btn  " '.$disable.'  data-id="' . $row["p_id"] . '" id="up_val"><i class="fas fa-angle-up"></i></button><input   type="text" id="qty_input' . $row["p_id"] . '" min="0" max="5" name=""  class="text-center " disabled  value="1"> <button data-id="' . $row["p_id"] . '"  '.$disable.' id="down_val" class="btn "><i class="fas fa-angle-down"></i></button> </div> 
-                                        <span>PKR ' . $row['p_prize'] . '</span> <br>
+                                        <span>$' . $row['p_prize'] . '</span> <br>
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                                 <button role="button"  type="button" '.$disable.'  class=" btn   cart_show"><i class="fas fa-cart-arrow-down"></i></button>
                                                 <button role="button" id="CartBtn" '.$disable.' data-id="' . $row["p_id"] . '" data-msgId="#p_msg"  class="btn " >add to cart</button>
                                                 
                                             </div>
-                                        
                                     </div>';
         };
         $q2 = $conn->query("SELECT * FROM `product`");
