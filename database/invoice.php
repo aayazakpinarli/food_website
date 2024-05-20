@@ -1,6 +1,5 @@
 <?php
 include "conf.php";
-
         $q2=$conn->query("SELECT MAX(inv_id) as last_inv FROM `card`");
         if(mysqli_num_rows($q2) >0){
 
@@ -19,10 +18,16 @@ include "conf.php";
 
                     $invoice =  preg_replace_callback( "|(\d+)|", "increment", $invoice);
 
+
                     $app_id = $_POST["app_id"];
-                    $prize = $_POST["inv_prize"];
                     $date = $_POST["date"];
                     $desc = $_POST["desc"];
+                    $now = new DateTime();
+                    $day = date_diff($now, $date);
+                    if($day <= 4)
+                        $prize = $_POST["inv_prize"] - 5;
+                    else
+                        $prize = $_POST["inv_prize"];
                     $q= $conn->query("INSERT INTO `card`( `inv_id`, `app_id`, `date_discharge`, `amount_paid`, `description`) VALUES ('$invoice','$app_id','$date','$prize','$desc')");
 
                     if($q==true){
