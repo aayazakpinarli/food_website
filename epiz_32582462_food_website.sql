@@ -325,35 +325,16 @@ CREATE TABLE IF NOT EXISTS `register` (
 --
 
 INSERT INTO `register` (`u_id`, `unique_id`, `Name`, `email`, `password`, `image`, `status`, `role_id`, `address`, `number`, `city`, `district`) VALUES
-(2, 1357678, 'ahmer ali', 'ahmer@gmail.com', '123', '1677523302uesr.jpg', 'signal_cellular_4_bar', 1, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(3, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(13, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(16, 1117230790, 'rehman', 'rehman@gmail.com', '0000', '1663767978Koala.jpg', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(18, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(28, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(29, 97668943, 'aliysha', 'aliysha@hr.com', '123', '1677583448Thinking-Woman-PNG.png', 'signal_cellular_4_bar', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(33, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(36, 1117230790, 'Abdul Rehman 003', 'rehman@gmail.com', '0000', '1676055615pic-4.png', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(38, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(39, 97668943, 'aliysha', 'aliysha@gmail.com', '123', '1663620232face11.jpg', 'signal_cellular_4_bar', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(41, 1117230790, 'rehman', 'rehman@gmail.com', '0000', '1663767978Koala.jpg', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(42, 514652895, 'Dawood', 'Dawood@user.in', '123', 'pic.png', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(43, 87139959, 'Muslim ', 'Muslim@user.in', '123', '1675247857pic.jpg', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(44, 728356719, 'abdul Rehman', 'rehman@test.in', '123', '1675248388admin.jpg', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(47, 1357678, 'Imran Ali', 'Imran.Ali@fooddelever.com', '123', '1675417255pic.jpg', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(48, 1357678, 'Imran Ali', 'Imran.Ali@fooddelever.com', '123', '1675417425pic.jpg', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(49, 1357678, 'Imran Ali', 'Imran.Ali@fooddelever.com', '123', '16754175051675417425pic.jpg', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(50, 1133030496, 'samuel Yaqoob', 'samuel@gmail.com', '123', '167542006216754175051675417425pic.jpg', 'signal_cellular_4_bar', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(51, 267757519, 'samuel Yaqoob', 'samuel855@gmail.com', '123', '1676112226pic-1.png', 'signal_cellular_4_bar', 1, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(52, 1117230790, 'Abdul Rehman', 'Abdulrehman@foodCeo.com', '0000', '1675421206admin.jpg', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(53, 676373578, 'umer akber', 'umerAkber@gmail.com', '123', '16755359111675420102pic.jpg', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(54, 1584050050, 'Junaid Rehman', 'junaidRehman@worker.in', '123', '1676111192pic-3.png', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(56, 1102389833, 'javeed iqbal', 'javedIgbal@gmal.com', '123', '1677596306Thinking-Woman-PNG.png', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(57, 317669658, 'Mahroosh  asad', 'mahroosh@hr.com', '123', '1677691780Thinking-Woman-PNG.png', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(58, 181033846, 'ayaz', 'newMar@gmail.com', '123', '', 'signal_cellular_null', 1, 'ankara', 'N/A', 'ankara', 'ankara'),
-(59, 1165551694, 'sadasd', 'newMarss@gmail.com', 'asd', '', 'signal_cellular_4_bar', 2, 'asd', 'N/A', 'asd', 'asd'),
-(60, 1706500331, 'sadasd', 'newMarss@gmail.comaa', 'aaa', '', 'signal_cellular_null', 2, 'asd', 'N/A', 'asd', 'asd');
-
+(2, 123456789, 'BIM', 'bim@gmail.com', '1234', 'bim.jpg', 'signal_cellular_4_bar', 1, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
+(3, 987654321, 'Migros', 'migros@gmail.com', '1234', 'migros.jpg', 'signal_cellular_4_bar', 1, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
+(13, 1122334455, 'Carrefour', 'carrefour@gmail.com', '1234', 'carrefour.jpg', 'signal_cellular_4_bar', 1, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
+(16, 9988776655, 'Bildirici', 'bildirici@gmail.com', '1234', 'bildirici.jpg', 'signal_cellular_4_bar', 1, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
+(18, 5544332211, 'CTIS', 'ctis@gmail.com', '1234', 'ctis.jpg', 'signal_cellular_4_bar', 1, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
+(28, 334455667, 'John Doe', 'john.doe@gmail.com', '5678', 'john.jpg', 'signal_cellular_4_bar', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
+(29, 556677889, 'Jane Smith', 'jane.smith@gmail.com', '5678', 'jane.jpg', 'signal_cellular_4_bar', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
+(33, 998877665, 'Alice Johnson', 'alice.johnson@gmail.com', '5678', 'alice.jpg', 'signal_cellular_4_bar', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
+(36, 223344556, 'Bob Brown', 'bob.brown@gmail.com', '5678', 'bob.jpg', 'signal_cellular_4_bar', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
+(38, 112233445, 'Charlie Davis', 'charlie.davis@gmail.com', '5678', 'charlie.jpg', 'signal_cellular_4_bar', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya');
 -- --------------------------------------------------------
 
 --
