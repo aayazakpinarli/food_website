@@ -23,11 +23,11 @@ if($_POST["action"] == "cards"){
 
                 }
 
-                $q7=$conn->query("SELECT COUNT(*) as pro FROM `pro_stock`");
+                $q7=$conn->query("SELECT COUNT(*) as pro FROM `register`");
                 if($q7){
                     $row = mysqli_fetch_assoc($q7);
                     $res = [
-                        "name" => "product Stock",
+                        "name" => "User Info",
                         "result" => $row["pro"],
                         "color" => "var(--bs-orange)",
                         "icons" => "fas fa-store",

@@ -24,8 +24,10 @@ if (!empty($u_name) && !empty($u_email) && !empty($u_pass) && !empty($role_id)) 
             } else {
                 $status = "signal_cellular_4_bar";
                 $unique_id = rand(time(), 10000);
+                $hash = password_hash($u_pass, PASSWORD_BCRYPT) ; 
 
-                $final = $conn->query("INSERT INTO `register`(`unique_id`, `Name`, `email`, `password`, `status`, `role_id`, `city`, `district`, `address`) VALUES ('$unique_id', '$u_name', '$u_email', '$u_pass', '$status', '$role_id', '$u_city', '$u_district', '$u_address')");
+                $final = $conn->query("INSERT INTO `register`(`unique_id`, `Name`, `email`, `password`, `status`, `role_id`, `city`, `district`, `address`) 
+                VALUES ('$unique_id', '$u_name', '$u_email', '$hash', '$status', '$role_id', '$u_city', '$u_district', '$u_address')");
                 
                 if ($final === true) {
                     $q3 = $conn->query("SELECT * FROM `register` WHERE email = '$u_email'");
