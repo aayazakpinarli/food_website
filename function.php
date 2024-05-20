@@ -42,8 +42,7 @@ include "database/conf.php";
             <a class="active" href="#home">home</a>
             <a href="#products">products</a>
             <a href="#about">about</a>
-            <a href="#Products List">Products List</a>
-            <a href="admin/index.php" id="adminLink">Admin Panel</a>
+            <a href="admin/index.php" id="adminLink">Market Panel</a>
                  </nav>
     
         <div class="icons">

@@ -9,7 +9,6 @@ if(isset($_POST["action"])){
         $sql = "SELECT r.u_id, r.unique_id , r.Name ,r.email , r.password, r.image , r.role_id ,r.status FROM `register` as r  WHERE u_id = '$u_id'";
          $q=$conn->query($sql);
               if(mysqli_num_rows($q)){
-          
                   $data=mysqli_fetch_assoc($q);
                           $form .= '  <form  id="userEditForm" action="js/database/userUpdate.php" method="post"  accept-charset="multipart/form-data" >      
                               <input type="hidden" name="U_id" value="'.$data["u_id"].'">
